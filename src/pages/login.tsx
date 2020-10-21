@@ -5,6 +5,7 @@ import NextLink from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/client'
 
 import { Button, Container } from '../styles/pages/Home'
+import Router from 'next/router'
 
 export default function Login(): JSX.Element {
   const [email, setEmail] = useState('')
@@ -15,28 +16,11 @@ export default function Login(): JSX.Element {
   function handleLogin(e: FormEvent) {
     e.preventDefault()
     signIn('credentials', { email, password })
+    Router.push('/dashboard')
   }
 
   if (session) {
-    return (
-      <Container>
-        <Head>
-          <title>Next + Prisma</title>
-        </Head>
-        <h2>Bem vindx, {session.user.name}</h2>
-
-        <Button
-          onClick={() => {
-            signOut()
-          }}
-        >
-          Logout
-        </Button>
-        <NextLink href="/" passHref>
-          <Button type="submit">Voltar à página inicial</Button>
-        </NextLink>
-      </Container>
-    )
+    Router.push('/dashboard')
   }
 
   return (

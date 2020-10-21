@@ -47,9 +47,6 @@ const options = {
   },
   jwt: {
     secret: process.env.JWT_SECRET
-  },
-  pages: {
-    signIn: '/login'
   }
 }
 
