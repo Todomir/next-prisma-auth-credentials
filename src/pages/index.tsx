@@ -24,13 +24,7 @@ export default function Home(): JSX.Element {
       <h1>Hello, world!</h1>
       {session && <p>Welcome, {session.user.name}</p>}
       {session ? (
-        <Button
-          onClick={() => {
-            signOut()
-          }}
-        >
-          Logout
-        </Button>
+        <Button onClick={() => signOut()}>Logout</Button>
       ) : (
         <NextLink href="/login" passHref>
           <Button>Login</Button>
