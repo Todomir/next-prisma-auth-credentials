@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react'
 import Head from 'next/head'
 import NextLink from 'next/link'
 
-import { signIn, signOut, useSession } from 'next-auth/client'
+import { signIn, useSession } from 'next-auth/client'
 
 import { Button, Container } from '../styles/pages/Home'
 import Router from 'next/router'

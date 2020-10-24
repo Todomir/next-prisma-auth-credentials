@@ -3,6 +3,7 @@ import Providers from 'next-auth/providers'
 
 import { PrismaClient } from '@prisma/client'
 import { compare } from 'bcrypt'
+import { NextApiRequest, NextApiResponse } from 'next'
 
 const prisma = new PrismaClient()
 
@@ -50,4 +51,5 @@ const options = {
   }
 }
 
-export default (req, res) => NextAuth(req, res, options)
+export default (req: NextApiRequest, res: NextApiResponse): Promise<void> =>
+  NextAuth(req, res, options)

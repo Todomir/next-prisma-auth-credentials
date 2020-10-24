@@ -3,7 +3,10 @@ import { NextApiRequest, NextApiResponse } from 'next'
 
 import { hash } from 'bcrypt'
 
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+export default async function (
+  req: NextApiRequest,
+  res: NextApiResponse
+): Promise<void> {
   const prisma = new PrismaClient({ log: ['query'] })
 
   try {
